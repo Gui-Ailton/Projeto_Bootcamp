@@ -3,10 +3,25 @@ package com.devsuperior.dscatalog.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+//Anotação pra dizer que é uma classe que tem uma tabela no banco 
+@Entity
+
+//Anotação, que vai indicar o nome da tabela no banco
+@Table(name = "tb_category")
 public class Category implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	
+	//Anotação pra colocar auto-Incremente no id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	
